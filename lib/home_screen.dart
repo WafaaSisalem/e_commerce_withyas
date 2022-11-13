@@ -1,8 +1,10 @@
 import 'package:e_commerce_with_yasmeen/models/category_model.dart';
 import 'package:e_commerce_with_yasmeen/models/product_model.dart';
+import 'package:e_commerce_with_yasmeen/widgets/shopping_icon.dart';
 import 'package:flutter/material.dart';
 
 import 'category_widget.dart';
+import 'dummyyyyyyy.dart';
 import 'new_product_widget.dart';
 import 'popular_widget.dart';
 import 'search_widget.dart';
@@ -11,92 +13,7 @@ class HomeScreen extends StatelessWidget {
   HomeScreen({
     Key? key,
   }) : super(key: key);
-  List<CategoryModel> categories = [
-    CategoryModel(
-      id: 1,
-      name: 'Woman Fasion',
-      icon: Icon(
-        Icons.shopping_basket_sharp,
-        size: 35,
-        color: Colors.blue,
-      ),
-    ),
-    CategoryModel(
-      id: 1,
-      name: 'Woman Fasion',
-      icon: Icon(
-        Icons.shopping_basket_sharp,
-        size: 35,
-        color: Colors.blue,
-      ),
-    ),
-    CategoryModel(
-      id: 1,
-      name: 'Man Fasion',
-      icon: Icon(
-        Icons.man,
-        size: 35,
-        color: Colors.blue,
-      ),
-    ),
-    CategoryModel(
-      id: 1,
-      name: 'Fasion',
-      icon: Icon(
-        Icons.crop_din,
-        size: 35,
-        color: Colors.blue,
-      ),
-    ),
-    CategoryModel(
-      id: 1,
-      name: 'Woman Fasion',
-      icon: Icon(
-        Icons.shopping_basket_sharp,
-        size: 35,
-        color: Colors.blue,
-      ),
-    ),
-    CategoryModel(
-      id: 1,
-      name: 'Woman Fasion',
-      icon: Icon(
-        Icons.shopping_basket_sharp,
-        size: 35,
-        color: Colors.blue,
-      ),
-    ),
-  ];
-  List<ProductModel> products = [
-    ProductModel(
-        id: 1,
-        name: 'Camelia toma',
-        isFav: true,
-        isInCart: false,
-        price: 64,
-        imagePath: 'assets/images/iphone.jpg'),
-    ProductModel(
-        id: 1,
-        name: 'Camelia toma',
-        isFav: true,
-        isInCart: false,
-        price: 64,
-        imagePath: 'assets/images/iphone.jpg'),
-    ProductModel(
-        id: 1,
-        name: 'Camelia toma',
-        isFav: true,
-        isInCart: false,
-        price: 64,
-        imagePath: 'assets/images/iphone.jpg'),
-    ProductModel(
-        id: 1,
-        name: 'Camelia toma',
-        isFav: true,
-        isInCart: false,
-        price: 64,
-        imagePath: 'assets/images/iphone.jpg'),
-  ];
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -125,7 +42,7 @@ class HomeScreen extends StatelessWidget {
                           const SizedBox(
                             width: 6,
                           ),
-                          searchIconContainer(onTap: () {})
+                          ShoppingIcon(onTap: () {})
                         ],
                       ),
                     ),
@@ -217,24 +134,6 @@ class HomeScreen extends StatelessWidget {
       itemCount: categories.length,
       separatorBuilder: (context, index) => const SizedBox(
         width: 10,
-      ),
-    );
-  }
-
-  searchIconContainer({required VoidCallback onTap}) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        width: 35,
-        height: 35,
-        decoration: const BoxDecoration(
-          shape: BoxShape.circle,
-          color: Colors.blueAccent,
-        ),
-        child: const Icon(
-          Icons.shopping_cart,
-          color: Colors.white,
-        ),
       ),
     );
   }
